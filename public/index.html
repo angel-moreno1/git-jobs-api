@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev - Jobs</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+       <div class="w-screen h-screen bg-gray-200 overflow-x-hidden dark:bg-gray-700 relative">
+
+        <span class="sr-only">ALERT</span>
+        <div id="alert" class=" h-12 w-44 rounded-sm flex ease-in-out items-center px-3 absolute right-2 top-9 space-x-2 duration-200   transform translate-x-48 bg-white border-black z-30">
+          <svg class="w-7 text-indigo-400 dark:text-gray-700 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <p class="text-xs text-indigo-400 dark:text-gray-700 ">some field are empty</p>
+        </div>
+
+        <nav class="w-full h-24 bg-indigo-600 px-6 dark:bg-gray-900 z-10">
+          <div class="w-full h-16 flex items-center justify-between md:w-9/12 md:mx-auto">
+            <a href="./index.html"><h1 class="text-2xl text-white font-bold">DevJobs</h1></a>
+            <span class="sr-only"> SWITCH </span>
+  
+            <div class="w-32 h-full flex items-center justify-between">
+              <div class="w-5 h-5">
+                <svg class="text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <input type="checkbox" class="hidden" id="switch" />
+              <label for="switch" class="rounded-full">
+                <div class="w-12 h-5 rounded-full px-1 bg-white flex items-center cursor-pointer">
+                  <div id="point" class="w-4 h-4 rounded-full bg-indigo-600  dark:bg-gray-900 transform transition-transform duration-300 ease-out"></div>
+                </div>
+              </label>
+  
+              <div class="w-5 h-5">
+                <svg class="text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <span class="sr-only">INPUT AND FILTER</span>
+
+          <div class="w-full h-18 relative md:w-9/12 md:mx-auto md:flex bg-white rounded-xl">
+            <div class="md:w-1/3 rounded-xl pl-3 md:rounded-r-none border-r-2 h-16 flex items-center">
+              <svg class="w-6 text-indigo-600 dark:text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input id="title" spellcheck="false" type="text" autocomplete="off" class="py-6 px-6 w-full h-16 bg-white outline-none" placeholder="Filter by title, companies, expertise..." />
+            </div>
+            <div  class="relative w-1/3 bg-white h-16 md:flex cursor-pointer items-center justify-start pl-3 hidden border-r-2">
+              <svg class="w-6 text-indigo-600 dark:text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <input id="filter-location" spellcheck="false" autocomplete="off" class="py-6 px-6 md:w-full w-full h-16 bg-white  outline-none" type="text" placeholder="Filter by location" />
+
+            </div>
+            <div class="w-1/3 cursor-pointer bg-white h-16 md:flex items-center rounded-xl rounded-l-none justify-start pl-3 hidden border-r-2 space-x-2">
+              <div class="w-5 h-5 bg-gray-300 rounded-md"></div>
+              <select name="" id=""  class="cursor-pointer outline-none appearance-none px-4">
+                <option  value="full_time">Full Time</option>
+                <option  value="contract">Contract</option>
+                <option  value="part_Time">Part Time</option>
+              </select>
+              <!-- <p class="font-bold">Full Time</p> -->
+            </div>
+
+            <span class="sr-only">FILTER ICON</span>
+            <div class="w-7 h-7 absolute right-20 top-5 md:hidden">
+              <svg class="text-gray-600 fill-current cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+              </svg>
+            </div>
+            <span class="sr-only">SEARCH BUTTON</span>
+            <div id="search" class="w-14 h-10 absolute right-3 top-3 bg-indigo-600 cursor-pointer dark:bg-gray-800 flex items-center justify-center  rounded-md">
+              <svg class="text-white w-7 h-7 md:hidden " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <p class="text-white hidden md:block font-bold px-3">Search</p>
+            </div>
+          </div>
+
+        </nav>
+        
+        <h3 class="text-4xl mt-32 text-center absolute left-1/2 transform -translate-x-1/2" id="not-jobs-error"></h3>
+        <main class="md:w-9/12 md:mx-auto h-auto w-full pt-24 grid sm:grid-cols-2 grid-rows-6  sm:gap-x-4 sm:gap-y-10 sm:space-y-0  lg:grid-cols-3 lg:gap-x-4 lg:gap-y-16 lg:space-y-0  px-6 space-y-10"  id="jobs">
+       
+        </main>
+
+        <div class="mt-8 w-full flex justify-center" id="load-more">
+            <button class="py-4 px-3 bg-indigo-500 text-white rounded-xl outline-none dark:bg-gray-800 mb-5">Load More</button>
+        </div>
+      </div>     
+    
+
+      </div>
+      <script src="./js/moment.min.js"></script>                                            
+      <script src="./js/script.js" ></script>           
+</body>                                     
+</html>

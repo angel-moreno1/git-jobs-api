@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#switch:checked ~ label div div {
+    @apply translate-x-6;
+}
+
+@keyframes show-alert{
+    from {  }
+    to {
+        transform: translate(-7rem);
+    }
+}
