@@ -6,7 +6,7 @@ const mode = document.getElementById('switch'),
       loadMore = document.getElementById('load-more'),
       notJobsErrors = document.getElementById('not-jobs-error'),
       API = 'https://jobs.github.com/positions.json',
-      proxy = 'https://damp-peak-01929.herokuapp.com/';
+      proxy = "https://cryptic-gorge-73294.herokuapp.com/";
       
 let isLoading = true,
     page = 1
